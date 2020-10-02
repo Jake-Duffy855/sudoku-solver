@@ -6,7 +6,7 @@ let cursorX, cursorY;
 
 function setup() {
   createCanvas(400, 400);
-  myBoard = new Board([0,0,4,9,0,5,0,8,6,6,5,2,7,0,8,0,3,0,8,0,9,0,3,6,0,5,0,0,0,8,0,0,4,0,2,7,0,2,6,0,5,7,0,0,0,7,4,0,8,9,2,1,6,0,0,8,0,0,7,9,6,0,2,2,9,0,0,0,1,3,0,0,4,6,0,0,0,3,0,0,9]);
+  myBoard = new Board([0, 0, 4, 9, 0, 5, 0, 8, 6, 6, 5, 2, 7, 0, 8, 0, 3, 0, 8, 0, 9, 0, 3, 6, 0, 5, 0, 0, 0, 8, 0, 0, 4, 0, 2, 7, 0, 2, 6, 0, 5, 7, 0, 0, 0, 7, 4, 0, 8, 9, 2, 1, 6, 0, 0, 8, 0, 0, 7, 9, 6, 0, 2, 2, 9, 0, 0, 0, 1, 3, 0, 0, 4, 6, 0, 0, 0, 3, 0, 0, 9]);
   clear = createButton("Reset")
   clear.position(215, 425);
   clear.mousePressed(reset);
@@ -40,7 +40,7 @@ function mousePressed() {
     cursorX = int(map(mouseX, 0, width, 0, 9));
     cursorY = int(map(mouseY, 0, height, 0, 9));
   }
-  
+
 }
 
 function keyTyped() {
