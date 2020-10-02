@@ -1,13 +1,16 @@
 class Board {
-	constructor() {
-    let nums = [0,0,4,9,0,5,0,8,6,6,5,2,7,0,8,0,3,0,8,0,9,0,3,6,0,5,0,0,0,8,0,0,4,0,2,7,0,2,6,0,5,7,0,0,0,7,4,0,8,9,2,1,6,0,0,8,0,0,7,9,6,0,2,2,9,0,0,0,1,3,0,0,4,6,0,0,0,3,0,0,0];
-    this.board = [];
-		for (let i = 0; i < 9; i++) {
+	constructor(nums) {
+      this.board = [];
+	  for (let i = 0; i < 9; i++) {
       this.board[i] = [];
 			for (let j = 0; j < 9; j++) {
+              if (nums.length == 0) {
 				this.board[i][j] = new Square(i, j, 0);
-                //this.board[i][j] = new Square(i, j, nums[9 * j + i]);
-			}
+              } else {
+                this.board[i][j] = new Square(i, j, nums[9 * j + i]);
+			
+              }
+            }
  		}
 	}
 	
