@@ -7,7 +7,7 @@ function setup() {
   createCanvas(400, 400);
   myBoard = new Board();
   clear = createButton("Reset")
-  clear.position(200, 425);
+  clear.position(190, 425);
   clear.mousePressed(reset);
 }
 
