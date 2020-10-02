@@ -1,14 +1,18 @@
 var myBoard;
 let num = -1;
 let add = false;
+let solve = false;
 let cursorX, cursorY;
 
 function setup() {
   createCanvas(400, 400);
-  myBoard = new Board();
+  myBoard = new Board([0,0,4,9,0,5,0,8,6,6,5,2,7,0,8,0,3,0,8,0,9,0,3,6,0,5,0,0,0,8,0,0,4,0,2,7,0,2,6,0,5,7,0,0,0,7,4,0,8,9,2,1,6,0,0,8,0,0,7,9,6,0,2,2,9,0,0,0,1,3,0,0,4,6,0,0,0,3,0,0,9]);
   clear = createButton("Reset")
-  clear.position(175, 425);
+  clear.position(215, 425);
   clear.mousePressed(reset);
+  solveButton = createButton("Solve")
+  solveButton.position(140, 425);
+  solveButton.mousePressed(doSolve);
 }
 
 function draw() {
@@ -24,8 +28,10 @@ function draw() {
       add = false;
     }
   }
-  myBoard.solve();
-  myBoard.checkSolution();
+  if (solve) {
+    myBoard.solve();
+    myBoard.checkSolution();
+  }
 }
 
 function mousePressed() {
@@ -46,7 +52,10 @@ function keyReleased() {
 }
 
 function reset() {
-  print(6)
-  myBoard = new Board();
-  
+  myBoard = new Board([]);
+  solve = false;
+}
+
+function doSolve() {
+  solve = true;
 }
