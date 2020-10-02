@@ -1,4 +1,4 @@
-let myBoard;
+var myBoard;
 let num = -1;
 let add = false;
 let cursorX, cursorY;
@@ -6,6 +6,9 @@ let cursorX, cursorY;
 function setup() {
   createCanvas(400, 400);
   myBoard = new Board();
+  clear = createButton("Reset")
+  clear.position(200, 425);
+  clear.mousePressed(reset);
 }
 
 function draw() {
@@ -27,8 +30,11 @@ function draw() {
 
 function mousePressed() {
   add = true;
-  cursorX = int(map(mouseX, 0, width, 0, 9));
-  cursorY = int(map(mouseY, 0, height, 0, 9));
+  if (mouseX < 400 && mouseY < 400) {
+    cursorX = int(map(mouseX, 0, width, 0, 9));
+    cursorY = int(map(mouseY, 0, height, 0, 9));
+  }
+  
 }
 
 function keyTyped() {
@@ -37,4 +43,10 @@ function keyTyped() {
 
 function keyReleased() {
   num = -1;
+}
+
+function reset() {
+  print(6)
+  myBoard = new Board();
+  
 }
